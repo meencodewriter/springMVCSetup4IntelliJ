@@ -1,1 +1,0 @@
-# springMVCSetup4IntelliJ
