@@ -6,10 +6,14 @@
              xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--  Spring에서 외부 라이브러리를 공식 지원하는게 있음 Spring version에 맞춰 Integration한 Libaray가 위 bean:beans객체 부분임  -->
+
+
 
     <annotation-driven />
 
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+    <!-- resource파일을 static 객체로 두겠다는 의미 -->
     <resources mapping="/resources/**" location="/resources/"/>
 
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -18,7 +22,7 @@
         <beans:property name="suffix" value=".jsp" />
     </beans:bean>
 
-    <!-- 프로젝트 패키지이름 확인 -->
+    <!-- 프로젝트 패키지이름 확인 componant에 대해 AutoScan -->
     <context:component-scan base-package="com.meencodewriter.springMVCSetup" />
 
 </beans:beans>
